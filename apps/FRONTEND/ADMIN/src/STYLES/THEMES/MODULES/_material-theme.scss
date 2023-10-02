@@ -1,0 +1,32 @@
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘ APPS/FRONTEND/NEWS/STYLES/THEMES ∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ MATERIAL ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+
+@use '@angular/material' as material;
+@include material.core();
+
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ DARK THEME ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+
+$dark-theme: material.define-dark-theme((
+    color: (
+        primary: material.define-palette(material.$pink-palette),
+        accent: material.define-palette(material.$blue-grey-palette),
+        warn: material.define-palette(material.$red-palette)
+    ),
+    typography: material.define-typography-config(),
+    density: 0
+));
+
+@media (prefers-color-scheme: dark) {
+    @include material.core-theme($dark-theme);
+    @include material.icon-theme($dark-theme);
+    @include material.list-theme($dark-theme);
+    @include material.card-theme($dark-theme);
+    @include material.button-theme($dark-theme);
+    @include material.sidenav-theme($dark-theme);
+    @include material.divider-theme($dark-theme);
+}

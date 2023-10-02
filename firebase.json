@@ -1,0 +1,74 @@
+{
+	"firestore": {
+		"rules": "firestore.rules",
+		"indexes": "firestore.indexes.json"
+	},
+	
+	"functions": [{
+		"source": "functions",
+		"codebase": "default",
+		"ignore": [
+			".git",
+			"node_modules",
+			"firebase-debug.log",
+			"firebase-debug.*.log"
+		],
+		"predeploy": [
+			"npm --prefix \"$RESOURCE_DIR\" run lint",
+			"npm --prefix \"$RESOURCE_DIR\" run build"
+		]
+	}],
+	
+	"hosting": [{
+		
+		"target": "ADMIN",
+		"public": "dist/apps/FRONTEND/ADMIN",
+		
+		"cleanUrls": true,
+		"trailingSlash": false,
+		
+		"ignore": [
+			"**/.*",
+			"firebase.json",
+			"**/node_modules/**"
+		],
+		"rewrites": [{
+			"source": "**",
+			"destination": "/index.html"
+		}]
+	},
+	{
+		"target": "LINGOWS",
+		"public": "dist/apps/FRONTEND/LINGOWS",
+		
+		"cleanUrls": true,
+		"trailingSlash": false,
+		
+		"ignore": [
+			"**/.*",
+			"firebase.json",
+			"**/node_modules/**"
+		],
+		"rewrites": [{
+			"source": "**",
+			"destination": "/index.html"
+		}]
+	}],
+	
+	"storage": {
+		"rules": "storage.rules"
+	},
+	
+	"emulators": {
+		
+		"auth": { "port": 9099 },
+		"pubsub": { "port": 8085 },
+		"storage": { "port": 9199 },
+		"hosting": { "port": 5000 },
+		"functions": { "port": 5001 },
+		"firestore": { "port": 8080 },
+		
+		"ui": { "enabled": true },
+		"singleProjectMode": true
+	}
+}

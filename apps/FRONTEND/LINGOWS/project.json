@@ -1,0 +1,159 @@
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ PROJECT ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ LINGOWS ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+
+{
+	"name": "LINGOWS",
+	"prefix": "PLAYGROUND",
+	"sourceRoot": "apps/FRONTEND/LINGOWS/src",
+	
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "application",
+	
+	// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+	// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ TAGS ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+	// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+	
+	"tags": [],
+	
+	// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+	// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ TARGETS ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+	// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+	
+	"targets": {
+		
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ BUILD ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		
+		"build": {
+			
+			"outputs": ["{options.outputPath}"],
+			"executor": "@angular-devkit/build-angular:browser",
+			"defaultConfiguration": "production",
+			
+			"options": {
+				
+				"main": "apps/FRONTEND/LINGOWS/src/main.ts",
+				"index": "apps/FRONTEND/LINGOWS/src/index.html",
+				"tsConfig": "apps/FRONTEND/LINGOWS/tsconfig.app.json",
+				"outputPath": "dist/apps/FRONTEND/LINGOWS",
+				
+				"styles": ["apps/FRONTEND/LINGOWS/src/STYLES/styles.scss"],
+				"assets": [
+					"apps/FRONTEND/LINGOWS/src/assets",
+					"apps/FRONTEND/LINGOWS/src/assets/ICONS",
+					"apps/FRONTEND/LINGOWS/src/manifest.webmanifest"
+				],
+				
+				"scripts": [],
+				"polyfills": ["zone.js"],
+				
+				"serviceWorker": true,
+				"ngswConfigPath": "apps/FRONTEND/LINGOWS/ngsw-config.json"
+			},
+			
+			"configurations": {
+				
+				"production": {
+					
+					"budgets": [{
+						"type": "initial",
+						"maximumError": "1mb",
+						"maximumWarning": "500kb"
+					},
+					{
+						"type": "anyComponentStyle",
+						"maximumError": "4kb",
+						"maximumWarning": "2kb"
+					}],
+					"outputHashing": "all"
+				},
+				
+				"development": {
+					"sourceMap": true,
+					"namedChunks": true,
+					"vendorChunk": true,
+					"optimization": false,
+					"buildOptimizer": false,
+					"extractLicenses": false
+				}
+			}
+		},
+		
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ SERVE ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		
+		"serve": {
+			
+			"executor": "@angular-devkit/build-angular:dev-server",
+			"defaultConfiguration": "development",
+			
+			"configurations": {
+				
+				"production": {
+					"browserTarget": "LINGOWS:build:production"
+				},
+				
+				"development": {
+					"browserTarget": "LINGOWS:build:development"
+				}
+			}
+		},
+		
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ EXTRACT i18n ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		
+		"extract-i18n": {
+			
+			"executor": "@angular-devkit/build-angular:extract-i18n",
+			"options": {
+				"browserTarget": "LINGOWS:build"
+			}
+		},
+		
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ LINT ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		
+		"lint": {
+			
+			"outputs": ["{options.outputFile}"],
+			"executor": "@nx/linter:eslint",
+			
+			"options": {
+				"lintFilePatterns": [
+					"apps/FRONTEND/LINGOWS/**/*.ts",
+					"apps/FRONTEND/LINGOWS/**/*.html"
+				]
+			}
+		},
+		
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// *∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘ TEST ∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		// !∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘∘
+		
+		"test": {
+			
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"executor": "@nx/jest:jest",
+			
+			"options": {
+				"jestConfig": "apps/FRONTEND/LINGOWS/jest.config.ts",
+				"passWithNoTests": true
+			},
+			
+			"configurations": {
+				
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	}
+}

@@ -1,42 +1,34 @@
 {
-  "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "jest": true
-      },
-      "rules": {}
-    }
-  ]
+	"root": true,
+	"plugins": ["@nx"],
+	"ignorePatterns": ["**/*"],
+	
+	"overrides": [{
+		"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+		"rules": {
+			"@nx/enforce-module-boundaries": ["error", {
+				"allow": [],
+				"enforceBuildableLibDependency": true,
+				"depConstraints": [{
+					"sourceTag": "*",
+					"onlyDependOnLibsWithTags": ["*"]
+				}]
+			}]
+		}
+	},
+	{
+		"files": ["*.ts"],
+		"rules": {},
+		"extends": ["plugin:@nx/typescript"]
+	},
+	{
+		"files": ["*.js"],
+		"rules": {},
+		"extends": ["plugin:@nx/javascript"]
+	},
+	{
+		"files": ["*.spec.ts", "*.spec.js"],
+		"rules": {},
+		"env": { "jest": true }
+	}]
 }

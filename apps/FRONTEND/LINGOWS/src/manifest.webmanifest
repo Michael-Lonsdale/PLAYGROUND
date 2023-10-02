@@ -1,0 +1,54 @@
+{
+    "name": "LINGOWS DASHBOARD",
+    "short_name": "LINGOWS",
+    "description": "Lingows dashboard on Jumjook.",
+    
+    "id": "/",
+    "scope": "./",
+    "start_url": "./",
+    
+    "display": "standalone",
+    "orientation": "any",
+    
+    "theme_color": "#7D7D7D",
+    "background_color": "#121212",
+    
+    "icons": [{
+        "src": "assets/ICONS/favicon.svg",
+        "sizes": "400x400",
+        "type": "image/svg+xml",
+        "purpose": "any"
+    },
+    {
+        "src": "assets/ICONS/maskableIcon-128.svg",
+        "sizes": "128x128",
+        "type": "image/svg+xml",
+        "purpose": "maskable"
+    },
+    {
+        "src": "assets/ICONS/maskableIcon-192.svg",
+        "sizes": "192x192",
+        "type": "image/svg+xml",
+        "purpose": "maskable"
+    },
+    {
+        "src": "assets/ICONS/maskableIcon-384.svg",
+        "sizes": "384x384",
+        "type": "image/svg+xml",
+        "purpose": "maskable"
+    },
+    {
+        "src": "assets/ICONS/maskableIcon-512.svg",
+        "sizes": "512x512",
+        "type": "image/svg+xml",
+        "purpose": "maskable"
+    },
+    {
+        "src": "assets/ICONS/maskableIcon-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+    }],
+    
+    "shortcuts": []
+}
